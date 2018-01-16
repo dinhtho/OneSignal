@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.pcpv.onesignaldemo"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // api key 0neSignal
+        manifestPlaceholders = [onesignal_app_id               : "04a05efd-3365-4302-8be4-61bde1b26b12",
+                                onesignal_google_project_number: "322736887055"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+
+    // OneSignal
+    compile 'com.onesignal:OneSignal:3.+@aar'
+
+    // Required for OneSignal, even if you have added FCM.
+    compile 'com.google.android.gms:play-services-gcm:+'
+
+    // Required for geotagging
+    compile "com.google.android.gms:play-services-location:+"
+
+    // CardView
+    compile 'com.android.support:cardview-v7:26.1.0'
+}
