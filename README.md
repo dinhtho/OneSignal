@@ -4,4 +4,4 @@ http://androidbash.com/android-push-notification-service-using-onesignal/
 
 ##Demo
 
-<img src="https://github.com/dinhtho/CircleIndicator/blob/master/image.png" width="500"/>
+<img src="https://github.com/dinhtho/OneSignal/blob/master/image.png" width="500"/>
